@@ -1,6 +1,4 @@
 import 'package:collection/collection.dart';
-import 'package:dotted_border/dotted_border.dart';
-import 'package:educational_games_rating_table/core/layout/adaptive.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:sliver_tools/sliver_tools.dart';
@@ -199,9 +197,13 @@ class _MyHomePageState extends State<MyHomePage>
             ),
           ),
         ),
-        bottom: const TabBar(
+        bottom: TabBar(
           physics: _tabPhysics,
-          tabs: <Tab>[
+          indicatorColor: Colors.transparent,
+          indicator: BoxDecoration(
+            color: _appBarColor.withOpacity(0.8),
+          ),
+          tabs: const <Tab>[
             Tab(text: 'Все игровые сессии'),
             Tab(text: 'Средний рейтинг по каждому игроку'),
           ],
